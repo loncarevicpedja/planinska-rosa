@@ -1,26 +1,143 @@
 @import "tailwindcss";
 
+/*
+  Prioritet: tamno zelena (#2F5D50) po celom sajtu.
+  Navigacija / futer: najtamnija šumsko-zelena (okvir kao na referenci).
+  Bela slova na zelenim površinama; zlatno samo kao akcent (oznake, ivice, aktivno stanje).
+  Krem blokovi (npr. uvod): tamno zelena + ugljen za čitljivost.
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #2f5d50;
+  --foreground: #ffffff;
+  --primary: #2f5d50;
+  --nav: #0f1c19;
+  --gold: #b8954a;
+  --gold-light: #d4b06a;
+  --surface: #245a4f;
+  --surface-deep: #1a4540;
+  --paper: #f0ebe2;
+  --ink-body: #3a3a3a;
+  --cream: #ffffff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: #2f5d50;
+  --color-foreground: #ffffff;
+  --color-primary: #2f5d50;
+  --color-nav: #0f1c19;
+  --color-gold: #b8954a;
+  --color-gold-light: #d4b06a;
+  --color-surface: #245a4f;
+  --color-surface-deep: #1a4540;
+  --color-soft: #7aab9a;
+  --color-paper: #f0ebe2;
+  --color-ink-body: #3a3a3a;
+  --color-cream: #ffffff;
+  /* Na tamnoj zeleni: beli tekst */
+  --color-ink: #ffffff;
+  --color-ivory: #ffffff;
+  --color-brown: #b8954a;
+  --color-beige: #1e5248;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --shadow-soft: 0 24px 48px -12px rgb(0 0 0 / 0.4);
+  --shadow-card: 0 12px 40px rgb(0 0 0 / 0.28);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background: var(--primary);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: rgb(184 149 74 / 0.45);
+  color: var(--cream);
+}
+
+/* Hero — tačkice kao na referenci: bela aktivna, bleđa neaktivna */
+.hero-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgb(255 255 255 / 0.35);
+  opacity: 1;
+  transition: background 0.4s ease, transform 0.4s ease;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  background: #ffffff;
+  box-shadow: 0 0 0 1px rgb(184 149 74 / 0.65);
+  transform: scale(1.15);
+}
+
+.hero-swiper .swiper-slide-active .hero-kenburns {
+  animation: hero-kenburns 14s ease-out forwards;
+}
+
+.hero-swiper .swiper-slide:not(.swiper-slide-active) .hero-kenburns {
+  transform: scale(1);
+  animation: none;
+}
+
+@keyframes hero-kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.gallery-swiper .swiper-button-prev,
+.gallery-swiper .swiper-button-next {
+  color: var(--gold-light);
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-swiper .swiper-button-prev:hover,
+.gallery-swiper .swiper-button-next:hover {
+  opacity: 1;
+}
+
+.gallery-swiper .swiper-button-prev::after,
+.gallery-swiper .swiper-button-next::after {
+  font-size: 1.25rem;
+}
+
+.gallery-swiper .swiper-pagination-bullet {
+  background: rgb(184 149 74 / 0.45);
+  opacity: 1;
+}
+
+.gallery-swiper .swiper-pagination-bullet-active {
+  background: var(--gold-light);
+}
+
+/* Početna — horizontalni strip galerije */
+.gallery-x-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(47 93 80 / 0.35) transparent;
+  scroll-snap-type: x mandatory;
+}
+
+.gallery-x-scroll::-webkit-scrollbar {
+  height: 7px;
+}
+
+.gallery-x-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gallery-x-scroll::-webkit-scrollbar-thumb {
+  background: rgb(47 93 80 / 0.3);
+  border-radius: 9999px;
+}
+
+.gallery-x-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgb(47 93 80 / 0.45);
 }
