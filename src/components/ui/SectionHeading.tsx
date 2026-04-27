@@ -17,7 +17,7 @@ export function SectionHeading({
   const alignClass = align === "center" ? "text-center mx-auto" : "";
   const isLight = tone === "paper" || tone === "white";
   const eyebrowTone = "text-gold";
-  const titleTone = isLight ? "text-primary" : "text-white";
+  const titleTone = isLight ? "text-forest" : "text-white";
   const subtitleTone = isLight ? "text-ink-body/90" : "text-white/78";
 
   return (

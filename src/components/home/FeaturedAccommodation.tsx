@@ -45,7 +45,7 @@ export function FeaturedAccommodation() {
                   </motion.div>
                 </Link>
                 <div className="flex flex-1 flex-col p-6 md:p-8">
-                  <h3 className="font-serif text-2xl text-primary">{villa.title}</h3>
+                  <h3 className="font-serif text-2xl text-forest">{villa.title}</h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-body/85 md:text-base">
                     {villa.shortDescription}
                   </p>

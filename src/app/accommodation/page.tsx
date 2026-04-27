@@ -45,18 +45,18 @@ export default function AccommodationPage() {
                       i % 2 === 1 ? "lg:order-1" : ""
                     }`}
                   >
-                    <h2 className="font-serif text-2xl text-primary md:text-3xl">{villa.title}</h2>
+                    <h2 className="font-serif text-2xl text-forest md:text-3xl">{villa.title}</h2>
                     <p className="mt-4 text-sm leading-relaxed text-ink-body/85 md:text-base">
                       {villa.shortDescription}
                     </p>
                     <dl className="mt-6 grid grid-cols-2 gap-3 text-xs text-ink-body/75 sm:text-sm">
                       <div>
                         <dt className="text-gold">Kapacitet</dt>
-                        <dd className="mt-0.5 font-medium text-primary/90">{villa.capacity}</dd>
+                        <dd className="mt-0.5 font-medium text-forest/90">{villa.capacity}</dd>
                       </div>
                       <div>
                         <dt className="text-gold">Površina</dt>
-                        <dd className="mt-0.5 font-medium text-primary/90">{villa.size}</dd>
+                        <dd className="mt-0.5 font-medium text-forest/90">{villa.size}</dd>
                       </div>
                     </dl>
                     <div className="mt-8">

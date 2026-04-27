@@ -9,7 +9,7 @@ const iconBtn =
   "flex h-10 w-10 items-center justify-center rounded-full border border-gold/35 text-white transition-all duration-300 hover:border-gold hover:bg-white/10 hover:text-gold-light";
 
 const iconBtnLight =
-  "flex h-10 w-10 items-center justify-center rounded-full border border-primary/15 text-primary transition-all duration-300 hover:border-primary/40 hover:bg-primary/5";
+  "flex h-10 w-10 items-center justify-center rounded-full border border-forest/15 text-forest transition-all duration-300 hover:border-forest/40 hover:bg-forest/5";
 
 type Variant = "onDark" | "onLight";
 

@@ -8,12 +8,12 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-gold text-primary shadow-card hover:bg-gold-light hover:shadow-soft hover:-translate-y-0.5 active:translate-y-0",
+    "bg-gold text-forest shadow-card hover:bg-gold-light hover:shadow-soft hover:-translate-y-0.5 active:translate-y-0",
   secondary:
     "border border-gold/50 bg-transparent text-cream backdrop-blur-sm hover:border-gold hover:bg-gold/10",
   /** Za belu / svetlu pozadinu */
   outline:
-    "border-2 border-primary bg-transparent text-primary hover:bg-primary/[0.07]",
+    "border-2 border-forest bg-transparent text-forest hover:bg-forest/[0.07]",
   ghost:
     "text-gold hover:text-cream border border-transparent hover:border-gold/30 hover:bg-gold/5",
 };

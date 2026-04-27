@@ -123,8 +123,8 @@ export function AmenitiesSection() {
           {items.map((item, i) => (
             <Reveal key={item.title} delay={0.06 * i}>
               <div className="rounded-2xl border border-primary/12 bg-primary/[0.05] p-6 transition-colors duration-500 hover:border-primary/22 hover:bg-primary/[0.08] md:p-8">
-                <div className="text-primary">{item.icon}</div>
-                <h3 className="mt-4 font-serif text-xl text-primary">{item.title}</h3>
+                <div className="text-forest">{item.icon}</div>
+                <h3 className="mt-4 font-serif text-xl text-forest">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-body/85">{item.text}</p>
               </div>
             </Reveal>

@@ -21,7 +21,7 @@ export function LifestyleSection() {
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold">
                 Atmosfera
               </p>
-              <h2 className="mt-4 font-serif text-3xl leading-tight text-primary md:text-4xl lg:text-[2.65rem] lg:leading-[1.12]">
+              <h2 className="mt-4 font-serif text-3xl leading-tight text-forest md:text-4xl lg:text-[2.65rem] lg:leading-[1.12]">
                 Jutra u magli, popodneva u svetlosti kroz borove
               </h2>
             </Reveal>

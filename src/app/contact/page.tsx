@@ -101,7 +101,7 @@ export default function ContactPage() {
       <section className="px-5 py-16 sm:px-6 md:py-20 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
-            <h2 className="font-serif text-2xl text-primary md:text-3xl">
+            <h2 className="font-serif text-2xl text-forest md:text-3xl">
               Jedan razgovor je dovoljan da počnete
             </h2>
             <p className="mt-4 text-ink-body/85">
@@ -111,7 +111,7 @@ export default function ContactPage() {
           <Reveal delay={0.08} className="mt-8">
             <a
               href={`mailto:${site.email}?subject=${encodeURIComponent("Upit — Planinska Rosa")}`}
-              className="inline-flex rounded-full bg-gold px-8 py-3.5 text-sm font-medium tracking-wide text-primary shadow-card transition-all duration-500 hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-soft"
+              className="inline-flex rounded-full bg-gold px-8 py-3.5 text-sm font-medium tracking-wide text-forest shadow-card transition-all duration-500 hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-soft"
             >
               Pišite nam e-poštom
             </a>

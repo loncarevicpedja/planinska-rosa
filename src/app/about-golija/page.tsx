@@ -62,7 +62,7 @@ export default function AboutGolijaPage() {
               <Reveal key={item.label} delay={0.05 * i}>
                 <div className="rounded-2xl border border-primary/12 bg-white p-6 shadow-soft">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">{item.label}</p>
-                  <p className="mt-2 font-serif text-xl text-primary">{item.value}</p>
+                  <p className="mt-2 font-serif text-xl text-forest">{item.value}</p>
                 </div>
               </Reveal>
             ))}
@@ -146,7 +146,7 @@ export default function AboutGolijaPage() {
             ].map((item, i) => (
               <Reveal key={item.title} delay={0.08 * i}>
                 <div className="h-full rounded-2xl border border-primary/12 bg-white p-8 shadow-card">
-                  <h3 className="font-serif text-xl text-primary">{item.title}</h3>
+                  <h3 className="font-serif text-xl text-forest">{item.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink-body/85">{item.text}</p>
                 </div>
               </Reveal>

@@ -10,7 +10,7 @@ export function VillaAvailability({ villa }: { villa: Villa }) {
     <section className="border-y border-primary/10 bg-white px-5 py-16 sm:px-6 md:py-20 lg:px-8">
       <div className="mx-auto max-w-4xl">
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Kalendar</p>
-        <h2 className="mt-3 font-serif text-3xl text-primary md:text-4xl">Raspoloživost</h2>
+        <h2 className="mt-3 font-serif text-3xl text-forest md:text-4xl">Raspoloživost</h2>
         <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-body/88">
           Ispod ide kalendar raspoloživosti za {villa.title}.
         </p>
@@ -27,7 +27,7 @@ export function VillaAvailability({ villa }: { villa: Villa }) {
           </div>
         ) : (
           <div className="mt-10 rounded-2xl border border-dashed border-primary/20 bg-primary/[0.04] px-6 py-12 text-center">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-gold/45 text-primary">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-gold/45 text-forest">
               <IconCalendarBooking className="h-8 w-8" />
             </div>
             <p className="mt-4 max-w-lg mx-auto text-ink-body/90">

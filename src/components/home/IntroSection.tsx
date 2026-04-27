@@ -14,7 +14,7 @@ export function IntroSection() {
         />
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="border-x border-gold/35 px-4 font-serif text-xl italic leading-relaxed text-primary md:border-x-0 md:px-0 md:text-2xl md:leading-relaxed">
+            <p className="border-x border-gold/35 px-4 font-serif text-xl italic leading-relaxed text-forest md:border-x-0 md:px-0 md:text-2xl md:leading-relaxed">
               „Verujemo da planinski boravak treba da bude iskren — prirodni materijali, pažljiv komfor
               i prostor u kome možete jednostavno biti.“
             </p>

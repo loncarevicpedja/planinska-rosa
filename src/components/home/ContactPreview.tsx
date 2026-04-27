@@ -10,14 +10,14 @@ export function ContactPreview() {
         <Reveal>
           <div className="flex h-full flex-col justify-center rounded-3xl border border-primary/10 bg-white p-8 shadow-lg md:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Kontakt</p>
-            <h2 className="mt-3 font-serif text-3xl text-primary md:text-4xl">Tu smo da pomognemo</h2>
+            <h2 className="mt-3 font-serif text-3xl text-forest md:text-4xl">Tu smo da pomognemo</h2>
             <dl className="mt-8 space-y-5 text-sm md:text-base">
               <div>
                 <dt className="font-medium text-gold">Telefon</dt>
                 <dd className="mt-1">
                   <a
                     href={`tel:${site.phone.replace(/\s/g, "")}`}
-                    className="text-ink-body transition-colors hover:text-primary"
+                    className="text-ink-body transition-colors hover:text-forest"
                   >
                     {site.phone}
                   </a>
@@ -28,7 +28,7 @@ export function ContactPreview() {
                 <dd className="mt-1">
                   <a
                     href={`mailto:${site.email}`}
-                    className="text-ink-body transition-colors hover:text-primary"
+                    className="text-ink-body transition-colors hover:text-forest"
                   >
                     {site.email}
                   </a>
