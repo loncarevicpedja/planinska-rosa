@@ -16,9 +16,6 @@ export type Villa = {
   bookingPropertyUrl?: string;
 };
 
-const unsplash = (id: string, w = 1600) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
-
 export const villas: Villa[] = [
   {
     slug: "villa-1",
@@ -57,16 +54,16 @@ export const villas: Villa[] = [
       "Intimna vila u alpskom duhu — lokalni kamen, meka svetlost i panoramski grebeni.",
     description:
       "Vila 2 osmišljena je za goste koji vole teksturu i mir. Prirodni materijali sidre enterijer, dok veliki otvori okviruju nebo iznad Golije. Večeri pozivaju na opuštanje uz vatru; dani na istraživanje livada, staza i vidikovaca. Svaki detalj je u funkciji spokoja — pročišćen prostor, kvalitetna posteljina i kuhinja spremna za jednostavno, iskreno kuvanje posle vremena provedenog napolju.",
-    heroImage: unsplash("photo-1600047509807-ba8f99d2cdde"),
+    heroImage: "/golija-slike/vila-2/hero.jpeg",
     capacity: "Do 4 gosta",
     bedrooms: "2 spavaće sobe",
     bathrooms: "1 kupatilo",
     size: "Oko 95 m²",
     gallery: [
-      unsplash("photo-1600585154526-990dced4db0d"),
-      unsplash("photo-1600607687644-c7171b42498f"),
-      unsplash("photo-1600210492486-724fe5c67fb0"),
-      unsplash("photo-1600566752355-35792bedcfea"),
+      "/golija-slike/vila-2/galerija-1.jpeg",
+      "/golija-slike/vila-2/galerija-2.jpeg",
+      "/golija-slike/vila-2/galerija-3.jpeg",
+      "/golija-slike/vila-2/galerija-4.jpeg",
     ],
     amenities: [
       "Opremljena kuhinja",
@@ -85,16 +82,16 @@ export const villas: Villa[] = [
       "Svetao, vazdušast apartman sa pogledom na livadu — za par ili malu porodicu.",
     description:
       "Vila 3, gde jutarnja magla pretvara pejzaž u meke tonove. Raspored je otvoren i jednostavan, u smirenoj paleti inspirisanoj koricom breze, mahovinom i bledom kamenu. Odlična baza za planinarenje, fotografiju i spor život. Sa staza se vraćate na toplu tuš, čaj na balkonu i tišinu koju donose samo planinske večeri.",
-    heroImage: unsplash("photo-1600585154363-67eb9e2e2099"),
+    heroImage: "/golija-slike/vila-3/hero.jpeg",
     capacity: "Do 4 gosta",
     bedrooms: "2 spavaće sobe",
     bathrooms: "1 kupatilo",
     size: "Oko 78 m²",
     gallery: [
-      unsplash("photo-1600573472592-401b489a3cdc"),
-      unsplash("photo-1600607688969-a5bfcd646154"),
-      unsplash("photo-1600585154084-4e5fe7c39198"),
-      unsplash("photo-1600566753086-00f18fb6b3ea"),
+      "/golija-slike/vila-3/galerija-1.jpeg",
+      "/golija-slike/vila-3/galerija-2.jpeg",
+      "/golija-slike/vila-3/galerija-3.jpeg",
+      "/golija-slike/vila-3/galerija-4.jpeg",
     ],
     amenities: [
       "Kuhinjica i trpezarija",
