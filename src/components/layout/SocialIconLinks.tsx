@@ -35,7 +35,7 @@ export function SocialIconLinks({
       </a>
       <a
         href={site.social.facebook}
-        className={btn}
+        className={`${btn} hidden`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Facebook stranica"
@@ -44,7 +44,7 @@ export function SocialIconLinks({
       </a>
       <a
         href={site.bookingHubUrl}
-        className={btn}
+        className={`${btn} hidden`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Rezervacija na Booking.com"

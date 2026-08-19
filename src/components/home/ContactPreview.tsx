@@ -14,12 +14,18 @@ export function ContactPreview() {
             <dl className="mt-8 space-y-5 text-sm md:text-base">
               <div>
                 <dt className="font-medium text-gold">Telefon</dt>
-                <dd className="mt-1">
+                <dd className="mt-1 flex flex-col gap-1">
                   <a
                     href={`tel:${site.phone.replace(/\s/g, "")}`}
                     className="text-ink-body transition-colors hover:text-forest"
                   >
                     {site.phone}
+                  </a>
+                  <a
+                    href={`tel:${site.phoneSecondary.replace(/\s/g, "")}`}
+                    className="text-ink-body transition-colors hover:text-forest"
+                  >
+                    {site.phoneSecondary}
                   </a>
                 </dd>
               </div>

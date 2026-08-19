@@ -52,9 +52,9 @@ export function ContactForm() {
             <option value="" disabled>
               Izaberite vilu
             </option>
-            <option value="villa-1">Vila 1 — Borov vrh</option>
-            <option value="villa-2">Vila 2 — Kamen i nebo</option>
-            <option value="villa-3">Vila 3 — Livadska kuća</option>
+            <option value="villa-1">Planinska rosa 1</option>
+            <option value="villa-2">Planinska rosa 2</option>
+            <option value="villa-3">Planinska rosa 3</option>
             <option value="unsure">Još nisam odlučio/la</option>
           </select>
         </label>

@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { villas } from "@/lib/villas";
+import { isBookable, villas } from "@/lib/villas";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +9,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Smeštaj",
   description:
-    "Pogledajte tri planinske vile na Goliji — svaka sa svojim karakterom, pogledom i osećajem mira.",
+    "Pogledajte planinske vile na Goliji i gostionicu Topla — smeštaj za boravak i zasebna kućica za druženje.",
 };
 
 export default function AccommodationPage() {
@@ -20,7 +20,7 @@ export default function AccommodationPage() {
           <SectionHeading
             eyebrow="Smeštaj"
             title="Izaberite vilu koja odgovara Vašem ritmu"
-            subtitle="Sva tri doma dele isto mirno susedstvo na Goliji — a svaki drugačije se odnosi prema svetlosti, pejzažu i rasporedu prostora."
+            subtitle="Tri vile za noćenje i zasebna gostionica za druženje — sve na istom mirnom imanju na Goliji."
           />
           <div className="grid gap-10 lg:gap-14">
             {villas.map((villa, i) => (
@@ -60,7 +60,9 @@ export default function AccommodationPage() {
                       </div>
                     </dl>
                     <div className="mt-8">
-                      <ButtonLink href={`/accommodation/${villa.slug}`}>Detalji smeštaja</ButtonLink>
+                      <ButtonLink href={`/accommodation/${villa.slug}`}>
+                        {isBookable(villa) ? "Detalji smeštaja" : "Pogledajte gostionicu"}
+                      </ButtonLink>
                     </div>
                   </div>
                 </article>

@@ -3,12 +3,15 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/ButtonLink";
-import { villas } from "@/lib/villas";
+import { isBookable, villas } from "@/lib/villas";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
 export function FeaturedAccommodation() {
+  const stays = villas.filter(isBookable);
+  const inn = villas.find((v) => !isBookable(v));
+
   return (
     <section className="bg-white px-5 py-20 sm:px-6 md:py-28 lg:px-8 lg:py-32">
       <div className="mx-auto max-w-7xl">
@@ -19,7 +22,7 @@ export function FeaturedAccommodation() {
           tone="white"
         />
         <div className="grid gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3 lg:gap-8">
-          {villas.map((villa, i) => (
+          {stays.map((villa, i) => (
             <Reveal key={villa.slug} delay={0.08 * i}>
               <motion.article
                 whileHover={{ y: -6 }}
@@ -62,6 +65,38 @@ export function FeaturedAccommodation() {
             </Reveal>
           ))}
         </div>
+        {inn ? (
+          <Reveal className="mt-10 md:mt-12">
+            <article className="flex flex-col overflow-hidden rounded-3xl border border-primary/12 bg-primary/[0.06] shadow-card ring-1 ring-primary/5 md:grid md:grid-cols-2 md:items-stretch">
+              <Link
+                href={`/accommodation/${inn.slug}`}
+                className="relative block aspect-[16/11] w-full overflow-hidden md:aspect-auto md:min-h-[280px]"
+              >
+                <Image
+                  src={inn.heroImage}
+                  alt=""
+                  fill
+                  className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
+                  sizes="(max-width:768px) 100vw, 50vw"
+                />
+              </Link>
+              <div className="p-6 md:p-10">
+                <h3 className="font-serif text-2xl text-forest md:text-3xl">{inn.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-body/85 md:text-base">
+                  {inn.shortDescription}
+                </p>
+                <div className="mt-6">
+                  <Link
+                    href={`/accommodation/${inn.slug}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-primary/90"
+                  >
+                    Pogledajte gostionicu <span aria-hidden>→</span>
+                  </Link>
+                </div>
+              </div>
+            </article>
+          </Reveal>
+        ) : null}
         <Reveal className="mt-12 text-center md:mt-16">
           <ButtonLink href="/accommodation">Pogledajte ceo smeštaj</ButtonLink>
         </Reveal>

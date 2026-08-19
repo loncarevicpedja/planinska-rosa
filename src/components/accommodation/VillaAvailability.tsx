@@ -7,7 +7,7 @@ export function VillaAvailability({ villa }: { villa: Villa }) {
   const booking = villa.bookingPropertyUrl;
 
   return (
-    <section className="border-y border-primary/10 bg-white px-5 py-16 sm:px-6 md:py-20 lg:px-8">
+    <section className="hidden border-y border-primary/10 bg-white px-5 py-16 sm:px-6 md:py-20 lg:px-8">
       <div className="mx-auto max-w-4xl">
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Kalendar</p>
         <h2 className="mt-3 font-serif text-3xl text-forest md:text-4xl">Raspoloživost</h2>

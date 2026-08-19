@@ -17,7 +17,7 @@ export default function GalleryPage() {
           <SectionHeading
             eyebrow="Galerija"
             title="Svetlost, tekstura i raspoloženje planine"
-            subtitle="Dodirnite ili kliknite fotografiju za miran prikaz preko celog ekrana. Strelicama na tastaturi listate; zatvorite dugmetom Zatvori ili tipkom za napuštanje celog ekrana."
+            subtitle="Dodirnite fotografiju za prikaz preko celog ekrana."
             align="center"
           />
           <Reveal>

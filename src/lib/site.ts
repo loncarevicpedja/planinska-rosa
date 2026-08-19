@@ -4,6 +4,7 @@ export const site = {
   description:
     "Vrhunske planinske vile i apartmani na Goliji — mir, priroda i pažljivo osmišljen komfor.",
   phone: "+381 64 419 74 74",
+  phoneSecondary: "+381 64 215 57 63",
   email: "kontakt@planinskarosa.rs",
   address: "Plešin 150E, Golija, Srbija",
   mapEmbedUrl:
@@ -30,6 +31,7 @@ export const mainNav: NavItem[] = [
       { href: "/accommodation/villa-1", label: "Vila 1" },
       { href: "/accommodation/villa-2", label: "Vila 2" },
       { href: "/accommodation/villa-3", label: "Vila 3" },
+      { href: "/accommodation/gostionica", label: "Gostionica" },
     ],
   },
   { href: "/about-golija", label: "O Goliji" },

@@ -1,6 +1,7 @@
 import { AboutGolijaPreview } from "@/components/home/AboutGolijaPreview";
 import { AmenitiesSection } from "@/components/home/AmenitiesSection";
 import { ContactPreview } from "@/components/home/ContactPreview";
+import { EstateVideoSection } from "@/components/home/EstateVideoSection";
 import { FeaturedAccommodation } from "@/components/home/FeaturedAccommodation";
 import { FinalCtaSection } from "@/components/home/FinalCtaSection";
 import { GalleryPreview } from "@/components/home/GalleryPreview";
@@ -13,6 +14,7 @@ export default function HomePage() {
     <>
       <HeroSlider />
       <main>
+        <EstateVideoSection />
         <IntroSection />
         <FeaturedAccommodation />
         <AboutGolijaPreview />

@@ -3,6 +3,7 @@
 import { SocialIconLinks } from "@/components/layout/SocialIconLinks";
 import { mainNav, site } from "@/lib/site";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -22,19 +23,24 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b border-gold/20 bg-nav transition-all duration-500 ease-out ${
-        scrolled ? "py-3 shadow-[0_8px_32px_rgb(0_0_0/0.35)]" : "py-4 md:py-5"
+      className={`fixed inset-x-0 top-0 z-50 overflow-visible border-b border-gold/20 bg-nav transition-shadow duration-500 ease-out ${
+        scrolled ? "shadow-[0_8px_32px_rgb(0_0_0/0.35)]" : ""
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between gap-4 px-5 sm:px-6 md:h-[4.75rem] lg:px-8">
         <Link
           href="/"
-          className="group relative z-10 font-serif text-xl tracking-tight text-white transition-opacity duration-300 hover:opacity-95 md:text-2xl"
+          className="relative z-20 shrink-0"
+          aria-label={site.name}
         >
-          <span className="relative">
-            {site.name}
-            <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-500 group-hover:w-full" />
-          </span>
+          <Image
+            src="/golija-slike/dvoriste/logo-planinska-rosa.png"
+            alt={site.name}
+            width={128}
+            height={128}
+            priority
+            className="h-11 w-11 rounded-full object-cover md:h-12 md:w-12"
+          />
         </Link>
 
         <nav

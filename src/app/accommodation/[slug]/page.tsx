@@ -1,8 +1,9 @@
 import { VillaAvailability } from "@/components/accommodation/VillaAvailability";
+import { VillaFacts } from "@/components/accommodation/VillaFacts";
 import { VillaGallerySwiper } from "@/components/accommodation/VillaGallerySwiper";
 import { Reveal } from "@/components/motion/Reveal";
 import { ButtonLink } from "@/components/ui/ButtonLink";
-import { getVillaBySlug, villas } from "@/lib/villas";
+import { getVillaBySlug, isBookable, villas } from "@/lib/villas";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -41,11 +42,13 @@ export default async function VillaPage({ params }: Props) {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/55 to-primary/20" />
-        <div className="absolute inset-x-0 bottom-0 z-10 mx-auto max-w-7xl px-5 pb-12 sm:px-6 lg:px-8 lg:pb-16">
+        <div
+          className="absolute inset-x-0 bottom-0 h-[54%] bg-gradient-to-t from-primary/85 via-primary/45 to-transparent md:h-[50%]"
+          aria-hidden
+        />
+        <div className="absolute inset-x-0 bottom-0 z-10 mx-auto max-w-7xl px-5 pb-5 sm:px-6 lg:px-8 lg:pb-6">
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-light">Vila</p>
-            <h1 className="mt-3 max-w-3xl font-serif text-4xl leading-tight text-cream md:text-5xl lg:text-[3.25rem]">
+            <h1 className="max-w-3xl font-serif text-4xl leading-tight text-cream md:text-5xl lg:text-[3.25rem]">
               {villa.title}
             </h1>
           </Reveal>
@@ -58,17 +61,7 @@ export default async function VillaPage({ params }: Props) {
             <p className="text-base leading-relaxed text-ink-body/90 md:text-lg">{villa.description}</p>
           </Reveal>
           <Reveal delay={0.08} className="mt-10 grid gap-6 sm:grid-cols-2">
-            <div className="rounded-2xl border border-primary/12 bg-white p-6 shadow-soft">
-              <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-                Važni podaci
-              </h2>
-              <ul className="mt-4 space-y-2 text-sm text-ink-body/90">
-                <li>{villa.capacity}</li>
-                <li>{villa.bedrooms}</li>
-                <li>{villa.bathrooms}</li>
-                <li>{villa.size}</li>
-              </ul>
-            </div>
+            <VillaFacts villa={villa} />
             <div className="rounded-2xl border border-primary/12 bg-white p-6 shadow-soft">
               <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Sadržaji</h2>
               <ul className="mt-4 space-y-2 text-sm text-ink-body/90">
@@ -98,20 +91,28 @@ export default async function VillaPage({ params }: Props) {
         </div>
       </section>
 
-      <VillaAvailability villa={villa} />
+      {isBookable(villa) ? <VillaAvailability villa={villa} /> : null}
 
-      <section className="px-5 py-16 sm:px-6 md:py-24 lg:px-8">
+      <section className="border-y border-primary/10 bg-white px-5 py-16 sm:px-6 md:py-20 lg:px-8">
         <div className="mx-auto max-w-3xl rounded-3xl border border-gold/30 bg-surface-deep px-8 py-12 text-center md:px-12">
           <Reveal>
-            <h2 className="font-serif text-2xl text-cream md:text-3xl">Spremni da usporite ovde?</h2>
+            <h2 className="font-serif text-2xl text-cream md:text-3xl">
+              {isBookable(villa) ? "Spremni da usporite ovde?" : "Mesto susreta na imanju"}
+            </h2>
             <p className="mt-4 text-sm leading-relaxed text-cream/80 md:text-base">
-              Pošaljite nam željene datume i potvrdićemo dostupnost za {villa.title}.
+              {isBookable(villa)
+                ? `Pozovite nas i proverite raspoloživost za ${villa.title}.`
+                : `${villa.title} se ne rezerviše zasebno — tu je za druženje i obroke tokom boravka u vilama.`}
             </p>
           </Reveal>
           <Reveal delay={0.1} className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <ButtonLink href="/contact">Kontakt i rezervacija</ButtonLink>
-            <ButtonLink href="/accommodation" variant="secondary">
-              Ostale vile
+            {isBookable(villa) ? (
+              <ButtonLink href="/contact">Kontakt i rezervacija</ButtonLink>
+            ) : (
+              <ButtonLink href="/accommodation">Pogledajte smeštaj</ButtonLink>
+            )}
+            <ButtonLink href={isBookable(villa) ? "/accommodation" : "/contact"} variant="secondary">
+              {isBookable(villa) ? "Ostale vile" : "Kontakt"}
             </ButtonLink>
           </Reveal>
         </div>

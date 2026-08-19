@@ -54,6 +54,9 @@ export function SiteFooter() {
                 <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
               </li>
               <li>
+                <a href={`tel:${site.phoneSecondary.replace(/\s/g, "")}`}>{site.phoneSecondary}</a>
+              </li>
+              <li>
                 <a href={`mailto:${site.email}`}>{site.email}</a>
               </li>
               <li className="leading-relaxed">{site.address}</li>

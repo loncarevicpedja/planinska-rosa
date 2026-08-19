@@ -1,8 +1,8 @@
-import { ContactForm } from "@/components/contact/ContactForm";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -21,8 +21,8 @@ export default function ContactPage() {
             subtitle="Javite se sa pitanjima o vilama i raspoloživosti."
             tone="white"
           />
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-14">
-            <div className="lg:col-span-5">
+          <div className="grid items-center gap-10 md:grid-cols-2 md:gap-8 lg:gap-14">
+            <div>
               <Reveal>
                 <div className="rounded-3xl border border-gold/25 bg-surface p-8 shadow-card md:p-10">
                   <h2 className="font-serif text-2xl text-cream">Direktan kontakt</h2>
@@ -31,12 +31,18 @@ export default function ContactPage() {
                       <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
                         Telefon
                       </dt>
-                      <dd className="mt-2">
+                      <dd className="mt-2 flex flex-col gap-1">
                         <a
                           className="text-cream/90 transition-colors hover:text-gold"
                           href={`tel:${site.phone.replace(/\s/g, "")}`}
                         >
                           {site.phone}
+                        </a>
+                        <a
+                          className="text-cream/90 transition-colors hover:text-gold"
+                          href={`tel:${site.phoneSecondary.replace(/\s/g, "")}`}
+                        >
+                          {site.phoneSecondary}
                         </a>
                       </dd>
                     </div>
@@ -69,8 +75,17 @@ export default function ContactPage() {
                 </div>
               </Reveal>
             </div>
-            <div className="hidden lg:col-span-7">
-              <ContactForm />
+            <div className="flex items-center justify-center">
+              <div className="relative aspect-square w-[min(100%,18rem)] sm:w-[min(100%,22rem)] md:w-full md:max-w-[28rem]">
+                <Image
+                  src="/golija-slike/dvoriste/logo-planinska-rosa.png"
+                  alt={site.name}
+                  fill
+                  className="rounded-full object-cover"
+                  sizes="(max-width:768px) 22rem, 28rem"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ export function GalleryPreview() {
         <SectionHeading
           eyebrow="Galerija"
           title="Trenuci sa padine i iz boravka"
-          subtitle="Teksture drveta i kamena, svetlost kroz krošnje i tišina koja sledi posle dana provedenog napolju. Prevucite u stranu za još kadrova — kompletan album je na posebnoj stranici."
+          subtitle="Teksture drveta i kamena, svetlost kroz krošnje i tišina koja sledi posle dana provedenog napolju."
           align="center"
           tone="white"
         />
