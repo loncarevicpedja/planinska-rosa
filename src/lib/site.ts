@@ -2,7 +2,7 @@ export const site = {
   name: "Planinska Rosa",
   tagline: "Smeštaj na planini Golija",
   description:
-    "Vrhunske planinske vile i apartmani na Goliji — mir, priroda i pažljivo osmišljen komfor.",
+    "Planinska Rosa — smeštaj i vikendice na Goliji. Planinske kuće za odmor, apartmani i privatni smeštaj u prirodi.",
   phone: "+381 64 419 74 74",
   phoneSecondary: "+381 64 215 57 63",
   email: "kontakt@planinskarosa.rs",

@@ -1,5 +1,7 @@
+import { JsonLd } from "@/components/seo/JsonLd";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { seoDescription, seoKeywords } from "@/lib/seo";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
@@ -19,15 +21,32 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — Smeštaj na planini Golija`,
+    default: `${site.name} — smeštaj i vikendice na Goliji`,
     template: `%s | ${site.name}`,
   },
-  description: site.description,
+  description: seoDescription,
+  keywords: [...seoKeywords],
+  applicationName: site.name,
+  authors: [{ name: site.name }],
+  icons: {
+    icon: "/golija-slike/dvoriste/logo-planinska-rosa.png",
+    apple: "/golija-slike/dvoriste/logo-planinska-rosa.png",
+  },
   openGraph: {
-    title: site.name,
-    description: site.description,
+    title: `${site.name} — smeštaj i vikendice na Goliji`,
+    description: seoDescription,
     locale: "sr_RS",
     type: "website",
+    siteName: site.name,
+  },
+  twitter: {
+    card: "summary",
+    title: `${site.name} — smeštaj i vikendice na Goliji`,
+    description: seoDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -39,6 +58,7 @@ export default function RootLayout({
   return (
     <html lang="sr" className={`${inter.variable} ${playfair.variable} h-full`}>
       <body className="flex min-h-full flex-col bg-primary font-sans text-white antialiased">
+        <JsonLd />
         <SiteHeader />
         {children}
         <SiteFooter />

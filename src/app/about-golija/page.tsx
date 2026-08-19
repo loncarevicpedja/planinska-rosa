@@ -7,7 +7,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "O Goliji",
   description:
-    "Otkrijte Park prirode Golija — livade, šume, staze i smiren ritam zelenog srca planina Srbije.",
+    "Golija — park prirode za planinski odmor, vikend u prirodi i smeštaj Planinska Rosa. Turizam Golija, miran i porodični odmor.",
 };
 
 export default function AboutGolijaPage() {

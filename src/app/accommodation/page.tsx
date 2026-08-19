@@ -7,9 +7,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Smeštaj",
+  title: "Smeštaj i vikendice na Goliji",
   description:
-    "Pogledajte planinske vile na Goliji i gostionicu Topla — smeštaj za boravak i zasebna kućica za druženje.",
+    "Vikendice i smeštaj Planinska Rosa na Goliji — planinske kuće za odmor, privatni smeštaj u prirodi i gostionica na imanju.",
 };
 
 export default function AccommodationPage() {

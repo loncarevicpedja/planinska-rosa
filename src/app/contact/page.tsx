@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Kontakt",
-  description: `Kontaktirajte ${site.name} telefonom, e-poštom ili putem formulara — smeštaj na Goliji.`,
+  description: `Kontaktirajte ${site.name} — smeštaj i vikendice na Goliji. Telefon, e-pošta i lokacija za odmor u Planinskoj Rosi.`,
 };
 
 export default function ContactPage() {

@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Galerija",
   description:
-    "Vizuelno putovanje kroz pejzaže Golije i tople enterijere Planinske Rose.",
+    "Galerija Planinska Rosa Golija — fotografije vikendica, smeštaja i odmora u prirodi na Goliji.",
 };
 
 export default function GalleryPage() {
