@@ -1,5 +1,6 @@
 export const site = {
   name: "Planinska Rosa",
+  url: "https://planinskarosa.rs",
   tagline: "Smeštaj na planini Golija",
   description:
     "Planinska Rosa — smeštaj i vikendice na Goliji. Planinske kuće za odmor, apartmani i privatni smeštaj u prirodi.",

@@ -1,16 +1,22 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { withCanonical } from "@/lib/seo";
 import { isBookable, villas } from "@/lib/villas";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonical("/accommodation", {
   title: "Smeštaj i vikendice na Goliji",
   description:
     "Vikendice i smeštaj Planinska Rosa na Goliji — planinske kuće za odmor, privatni smeštaj u prirodi i gostionica na imanju.",
-};
+  openGraph: {
+    title: "Smeštaj i vikendice na Goliji | Planinska Rosa",
+    description:
+      "Vikendice i smeštaj Planinska Rosa na Goliji — planinske kuće za odmor, privatni smeštaj u prirodi i gostionica na imanju.",
+  },
+});
 
 export default function AccommodationPage() {
   return (

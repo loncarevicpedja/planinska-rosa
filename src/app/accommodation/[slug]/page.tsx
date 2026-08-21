@@ -3,6 +3,7 @@ import { VillaFacts } from "@/components/accommodation/VillaFacts";
 import { VillaGallerySwiper } from "@/components/accommodation/VillaGallerySwiper";
 import { Reveal } from "@/components/motion/Reveal";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { withCanonical } from "@/lib/seo";
 import { getVillaBySlug, isBookable, villas } from "@/lib/villas";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -18,10 +19,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const villa = getVillaBySlug(slug);
   if (!villa) return {};
-  return {
+  return withCanonical(`/accommodation/${slug}`, {
     title: villa.title,
     description: villa.shortDescription,
-  };
+    openGraph: {
+      title: `${villa.title} | Planinska Rosa`,
+      description: villa.shortDescription,
+    },
+  });
 }
 
 export default async function VillaPage({ params }: Props) {

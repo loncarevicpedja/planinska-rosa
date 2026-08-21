@@ -1,13 +1,19 @@
 import { GalleryLightbox } from "@/components/gallery/GalleryLightbox";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { withCanonical } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonical("/gallery", {
   title: "Galerija",
   description:
     "Galerija Planinska Rosa Golija — fotografije vikendica, smeštaja i odmora u prirodi na Goliji.",
-};
+  openGraph: {
+    title: "Galerija | Planinska Rosa",
+    description:
+      "Galerija Planinska Rosa Golija — fotografije vikendica, smeštaja i odmora u prirodi na Goliji.",
+  },
+});
 
 export default function GalleryPage() {
   return (

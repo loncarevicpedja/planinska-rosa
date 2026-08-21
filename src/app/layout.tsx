@@ -1,7 +1,7 @@
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { seoDescription, seoKeywords } from "@/lib/seo";
+import { seoDescription, seoKeywords, seoOgTitle } from "@/lib/seo";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
@@ -20,28 +20,33 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — smeštaj i vikendice na Goliji`,
+    default: `${seoOgTitle} | ${site.name}`,
     template: `%s | ${site.name}`,
   },
   description: seoDescription,
   keywords: [...seoKeywords],
   applicationName: site.name,
   authors: [{ name: site.name }],
+  alternates: {
+    canonical: `${site.url}/`,
+  },
   icons: {
     icon: "/golija-slike/dvoriste/logo-planinska-rosa.png",
     apple: "/golija-slike/dvoriste/logo-planinska-rosa.png",
   },
   openGraph: {
-    title: `${site.name} — smeštaj i vikendice na Goliji`,
+    title: seoOgTitle,
     description: seoDescription,
+    url: `${site.url}/`,
     locale: "sr_RS",
     type: "website",
     siteName: site.name,
   },
   twitter: {
     card: "summary",
-    title: `${site.name} — smeštaj i vikendice na Goliji`,
+    title: seoOgTitle,
     description: seoDescription,
   },
   robots: {

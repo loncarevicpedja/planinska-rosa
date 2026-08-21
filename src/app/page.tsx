@@ -8,6 +8,10 @@ import { GalleryPreview } from "@/components/home/GalleryPreview";
 import { HeroSlider } from "@/components/home/HeroSlider";
 import { IntroSection } from "@/components/home/IntroSection";
 import { LifestyleSection } from "@/components/home/LifestyleSection";
+import { withCanonical } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = withCanonical("/", {});
 
 export default function HomePage() {
   return (

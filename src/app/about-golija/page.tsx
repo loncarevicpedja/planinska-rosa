@@ -1,14 +1,20 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { withCanonical } from "@/lib/seo";
 import type { Metadata } from "next";
 import Image from "next/image";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonical("/about-golija", {
   title: "O Goliji",
   description:
     "Golija — park prirode za planinski odmor, vikend u prirodi i smeštaj Planinska Rosa. Turizam Golija, miran i porodični odmor.",
-};
+  openGraph: {
+    title: "O Goliji | Planinska Rosa",
+    description:
+      "Golija — park prirode za planinski odmor, vikend u prirodi i smeštaj Planinska Rosa. Turizam Golija, miran i porodični odmor.",
+  },
+});
 
 export default function AboutGolijaPage() {
   return (

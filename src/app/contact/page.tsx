@@ -1,14 +1,19 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { withCanonical } from "@/lib/seo";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonical("/contact", {
   title: "Kontakt",
   description: `Kontaktirajte ${site.name} — smeštaj i vikendice na Goliji. Telefon, e-pošta i lokacija za odmor u Planinskoj Rosi.`,
-};
+  openGraph: {
+    title: `Kontakt | ${site.name}`,
+    description: `Kontaktirajte ${site.name} — smeštaj i vikendice na Goliji. Telefon, e-pošta i lokacija za odmor u Planinskoj Rosi.`,
+  },
+});
 
 export default function ContactPage() {
   return (

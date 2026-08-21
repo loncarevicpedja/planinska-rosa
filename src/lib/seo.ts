@@ -1,3 +1,6 @@
+import { site } from "@/lib/site";
+import type { Metadata } from "next";
+
 export const seoKeywords = [
   "smestaj Golija",
   "smestaj na Goliji",
@@ -48,3 +51,32 @@ export const seoKeywords = [
 
 export const seoDescription =
   "Planinska Rosa — smeštaj i vikendice na Goliji. Planinske kuće za odmor, apartmani i privatni smeštaj u prirodi: miran porodični odmor, vikend u prirodi i planinski smeštaj Golija. Planinska Rosa Golija smeštaj, vikendice i kuća za odmor.";
+
+export const seoOgTitle =
+  "Smeštaj na Goliji | Vikendica i kuća za odmor";
+
+export function pageUrl(path = "/"): string {
+  if (path === "/") return `${site.url}/`;
+  return `${site.url}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+export function withCanonical(
+  path: string,
+  extra: Metadata = {},
+): Metadata {
+  const url = pageUrl(path);
+  return {
+    ...extra,
+    alternates: {
+      canonical: url,
+      ...extra.alternates,
+    },
+    openGraph: {
+      type: "website",
+      locale: "sr_RS",
+      siteName: site.name,
+      url,
+      ...extra.openGraph,
+    },
+  };
+}
